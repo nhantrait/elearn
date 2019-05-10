@@ -78,13 +78,13 @@
                     </ul>
                 </li>
                
-                <li class="nav-item dropdown nav-user">
+                <li class="nav-item dropdown nav-user" *ngIf="profile!=null">
                     <a class="nav-link nav-user-img" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false" *ngIf="profile.img!=''&&profile.img!=null else notImage"><img src="https://elearn-anhhong.c9users.io/images/{{profile.img}}" alt=""
                             class="user-avatar-md rounded-circle"></a>
                             <ng-template #notImage>
                                 <a class="nav-link nav-user-img" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false"><img src="https://scontent.fdad3-2.fna.fbcdn.net/v/t1.0-9/29683854_609414952739199_4015623375535404491_n.jpg?_nc_cat=105&_nc_oc=AQmKoliTbeWe52uKB-CZsualzDjqto5TVBAPJCaUzHd7uhkFI78CyDa6T6uGCY5S3kY&_nc_ht=scontent.fdad3-2.fna&oh=1ca44f2d62be8919c2e92651d0b80c45&oe=5D5CB6E0" alt=""
+                        aria-haspopup="true" aria-expanded="false"><img src="https://scontent.fdad3-2.fna.fbcdn.net/v/t1.0-9/29683854_609414952739199_4015623375535404491_n.jpg?_nc_cat=105&_nc_oc=AQmKoliTbeWe52uKB-CZsualzDjqto5TVBAPJCaUzHd7uhkFI78CyDa6T6uGCY5S3kY&_nc_ht=scontent.fdad3-2.fna&oh=1ca44f2d62be8919c2e92651d0b80c45&oe=5D5CB6E0" alt="" 
                             class="user-avatar-md rounded-circle"></a>
                             </ng-template>
                     <div class="dropdown-menu dropdown-menu-right nav-user-dropdown"

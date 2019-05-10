@@ -8,7 +8,7 @@
         <div class="panel panel-default">
           <div class="panel-body">
             <div class="table-responsive">
-                <ng-container *ngIf="comments!='';then haveComment else notComment"></ng-container>
+                <ng-container *ngIf="comments!=null;then haveComment else notComment"></ng-container>
                 <ng-template #haveComment>
               <div class="row">
                 
