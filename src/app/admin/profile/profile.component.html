@@ -1,0 +1,87 @@
+<div id="page-wrapper" style="width: 70%;float:right;margin-bottom: 70px">
+    <div id="page-inner">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 style="margin-top: 10%;color: red">Profile</h2>
+            </div>
+        </div>
+        <!-- /. ROW  -->
+        <hr />
+        <div class="row">
+            <div class="col-md-12">
+                <!-- Form Elements -->
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <form role="form" method="post" enctype="multipart/form-data" id="form"
+                                    *ngIf="profile!=null">
+                                    <div class="form-group">
+                                        <label for="name">Avatar</label>
+                                        <img style="margin-left: 20px; border-radius:50%;-moz-border-radius:50%;-webkit-border-radius:50%;width:7%"
+                                            src="https://scontent.fdad3-2.fna.fbcdn.net/v/t1.0-9/29683854_609414952739199_4015623375535404491_n.jpg?_nc_cat=105&_nc_oc=AQmKoliTbeWe52uKB-CZsualzDjqto5TVBAPJCaUzHd7uhkFI78CyDa6T6uGCY5S3kY&_nc_ht=scontent.fdad3-2.fna&oh=1ca44f2d62be8919c2e92651d0b80c45&oe=5D5CB6E0"
+                                            alt="">
+
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="name">Username</label>
+                                        <input type="text" id="name" value="{{profile.username}}" name="username"
+                                            class="form-control" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="name">Fullname</label>
+                                        <input style="margin-left: 5px" value="{{profile.name}}" type="text" name="name"
+                                            class="form-control" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="picture">Birthday</label>
+                                        <input style="margin-left: 5px" type="text"
+                                            value="{{profile.birthday | date:'dd/MM/yyyy'}}" name="name"
+                                            class="form-control" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="picture">Address</label>
+                                        <input style="margin-left: 5px" type="text" value="{{profile.address}}"
+                                            name="name" class="form-control" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="picture">Email</label>
+                                        <input style="margin-left: 5px" type="text" value="{{profile.email}}"
+                                            name="name" class="form-control" />
+                                    </div>
+
+                                    <div class="form-group" *ngIf="profile!=null">
+                                        <label for="">Gender</label>
+                                        <select class="form-control" name="gender" id=""
+                                            *ngIf="profile.gender === true else notMale">
+                                            <option class="form-control" value="true">Male</option>
+                                            <option class="form-control" value="false">Female</option>
+                                        </select>
+                                        <ng-template #notMale>
+                                            <select class="form-control" name="gender" id="">
+                                                <option class="form-control" value="false">Female</option>
+                                                <option class="form-control" value="true">Male</option>
+                                            </select>
+                                        </ng-template>
+
+
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="picture">Phone of number</label>
+                                        <input style="margin-left: 5px" type="text" value="{{profile.phone}}"
+                                            name="name" class="form-control" />
+                                    </div>
+                                    <button type="button" name="submit" (click)="editUser()"
+                                        class="btn btn-success btn-md">Sửa</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Form Elements -->
+            </div>
+        </div>
+        <!-- /. ROW  -->
+    </div>
+    <!-- /. PAGE INNER  -->
+</div>

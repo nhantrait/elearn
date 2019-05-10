@@ -1,0 +1,57 @@
+<div id="page-wrapper" style="width:75%;margin-top: 6%;float:right">
+  <div id="page-inner">
+    <!-- /. ROW  -->
+    <hr />
+    <div class="row">
+      <div class="col-md-12">
+        <!-- Advanced Tables -->
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <div class="table-responsive">
+              <div class="row">
+                <div class="col-sm-6">
+                  <a [routerLink]="[ '/category/add' ]" class="btn btn-success btn-md">Add Category</a>
+                </div>
+                <div class="col-sm-6" style="text-align: right;">
+                  <form action="">
+                    <input type="submit" name="search" value="search" class="btn btn-warning btn-sm"
+                      style="float:right" />
+                    <input type="search" class="form-control input-sm" placeholder="search"
+                      style="float:right; width: 300px;" />
+                    <div style="clear:both"></div>
+                  </form><br />
+                </div>
+              </div>
+
+              <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                <thead>
+                  <tr>
+                    <th width="40px">STT</th>
+                    <th width="70px">Category</th>
+                    <th width="70px">Detail</th>
+                    <th width="70px">Function</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let item of categories;let i = index">
+                    <td>{{i+1}}</td>
+                    <td>{{item.name}}</td>
+                    <td><a [routerLink]="[ '/category/'+item._id ]">.......</a></td>
+                    <td class="center">
+                      <a [routerLink]="['/category/edit/'+item._id]" class="btn btn-primary"><i class="fa fa-edit "></i>
+                        Edit</a>
+                      <a (click)="deleteCat(item._id)" class="btn btn-danger"><i class="fa fa-pencil"></i> Delete</a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+
+            </div>
+
+          </div>
+        </div>
+        <!--End Advanced Tables -->
+      </div>
+    </div>
+  </div>
+</div>

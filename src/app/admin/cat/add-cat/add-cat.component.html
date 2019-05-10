@@ -1,0 +1,35 @@
+
+<div id="page-wrapper" style="width: 70%;float:right;">
+  <div id="page-inner">
+    <div class="row">
+      <div class="col-md-12">
+        <h2 style="margin-top: 10%;color: red;font-family: Arial, Helvetica, sans-serif">Add Category</h2>
+      </div>
+    </div>
+    <!-- /. ROW  -->
+    <hr />
+    <div class="row">
+      <div class="col-md-12">
+        <!-- Form Elements -->
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <div class="row">
+              <div class="col-md-12">
+                <form id="form">
+                  <div class="form-group">
+                    <label for="name">Name Category</label>
+                    <input type="text" id="name" value="" class="form-control" [(ngModel)]="name" [ngModelOptions]="{standalone: true}" />
+                  </div>
+                  <button style="margin-top: 30px" (click)="addCat()" class="btn btn-success btn-md">Add</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End Form Elements -->
+      </div>
+    </div>
+    <!-- /. ROW  -->
+  </div>
+  <!-- /. PAGE INNER  -->
+</div>

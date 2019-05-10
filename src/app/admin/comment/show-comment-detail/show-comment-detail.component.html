@@ -1,0 +1,61 @@
+<div id="page-wrapper" style="width:75%;margin-top: 6%;float:right">
+  <div id="page-inner">
+    <!-- /. ROW  -->
+    <hr />
+    <div class="row">
+      <div class="col-md-12">
+        <!-- Advanced Tables -->
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <div class="table-responsive">
+                <ng-container *ngIf="comments!='';then haveComment else notComment"></ng-container>
+                <ng-template #haveComment>
+              <div class="row">
+                
+                <div class="col-sm-6" style="text-align: right;margin-left: 430px">
+                   
+                  <form method="post" action="">
+                    <input type="submit" name="search" value="Search" class="btn btn-warning btn-sm"
+                      style="float:right" />
+                    <input type="search" class="form-control input-sm" placeholder="search"
+                      style="float:right; width: 300px;" />
+                    <div style="clear:both"></div>
+                  </form><br />
+                </div>
+              </div>
+              <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                  <thead>
+                    <tr>
+                      <th width="40px">STT</th>
+                      <th width="70px">User Commented</th>
+                      <th width="70px">Content</th>
+                      <th width="70px">Date</th>
+                      <th width="70px">Function</th>
+                    </tr>
+                  </thead>
+                  <tbody *ngFor="let user of comments;let i = index">
+                    <tr>
+                      <td>{{i+1}}</td>
+                      <td>{{user.profile.name}}</td>
+                      <td style="word-break: break-all">{{user.content}}</td>
+                      <td>{{user.created | date:'dd/MM/yyyy'}} at {{user.created | date:'HH:mm'}}</td>
+                      <td class="center">
+
+                        <a (click)="deleteComment(user._id)" class="btn btn-danger"><i class="fa fa-pencil"></i> Xóa</a>
+                      </td>
+                    </tr>
+                  </tbody>
+              </table>
+            </ng-template>
+            <ng-template #notComment>
+              <h3>Not User Comment In This Post</h3>
+            </ng-template>
+            </div>
+
+          </div>
+        </div>
+        <!--End Advanced Tables -->
+      </div>
+    </div>
+  </div>
+</div>

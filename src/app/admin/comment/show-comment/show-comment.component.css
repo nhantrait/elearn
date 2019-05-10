@@ -1,0 +1,16 @@
+.table-responsive{
+    overflow: hidden;
+}
+.row{
+    margin-right: 0; 
+    margin-left: 0;
+}
+@media (max-width: 850px){
+    .col-md-12{
+        margin-left: 78px;
+    }
+    #page-wrapper{
+        width : 73%;
+        margin-right: 55px;
+    }
+}

@@ -1,0 +1,36 @@
+<div id="page-wrapper" style="width: 70%;float:right;">
+    <div id="page-inner">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 style="margin-top: 10%;color: red;font-family: Arial, Helvetica, sans-serif">Edit</h2>
+            </div>
+        </div>
+        <!-- /. ROW  -->
+        <hr />
+        <div class="row">
+            <div class="col-md-12">
+                <!-- Form Elements -->
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <form role="form"  id="form" *ngIf="tags!=null">
+                                    <div class="form-group">
+                                        <label for="name">Name Tag</label>
+                                        <input type="text" id="name" value="" [(ngModel)]="tags.name" [ngModelOptions]="{standalone: true}" class="form-control" />
+                                    </div>
+                                    <button type="button" (click)="editTag()"  class="btn btn-success btn-md">Edit</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Form Elements -->
+            </div>
+        </div>
+        <!-- /. ROW  -->
+    </div>
+    <!-- /. PAGE INNER  -->
+  </div>
+  
+  

@@ -1,0 +1,28 @@
+<div class="course">
+	<div class="title">
+		<span *ngIf="category!=null">{{category.name}}</span>	
+	</div>
+	<div class="content_course" *ngIf="listVocab!=null&&listGrammar!=null">
+		<div class="vocabulary">
+			<div class="box">
+				<div class="title_box">
+					<span>Vocabulary</span>
+				</div>
+				<div class="content_box">
+					<a *ngFor="let item of listVocab"  [routerLink]="[ '/'+category.name+'/'+item.name+'/vocab/'+item._id]">{{item.name}}</a>
+					
+				</div>
+			</div>
+		</div>
+		<div class="grammar">
+			<div class="box" >
+				<div class="title_box">
+					<span>Grammar</span>
+				</div>
+				<div class="content_box" >
+					<a  *ngFor="let item of listGrammar" [routerLink]="['/'+category.name+'/'+item.name+'/grammar/'+item._id ]">{{item.name}}</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

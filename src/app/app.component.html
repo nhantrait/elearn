@@ -1,0 +1,11 @@
+<!-- <app-admin></app-admin> -->
+<ng-container *ngIf="isLogin(); then pass else notPass"></ng-container>
+<ng-template #pass>
+    <app-header></app-header>
+    <router-outlet></router-outlet>
+</ng-template>
+<ng-template #notPass>
+    <app-login></app-login>
+</ng-template>
+
+

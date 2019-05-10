@@ -1,0 +1,47 @@
+
+<div id="page-wrapper" style="width: 70%;float:right;">
+  <div id="page-inner">
+    <div class="row">
+      <div class="col-md-12">
+        <h2 style="margin-top: 10%;color: red">Edit Grammar</h2>
+      </div>
+    </div>
+    <!-- /. ROW  -->
+    <hr />
+    <div class="row">
+      <div class="col-md-12">
+        <!-- Form Elements -->
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <div class="row">
+              <div class="col-md-12">
+                <form role="form"  id="form" *ngIf="grammar!=null">
+                  <div class="form-group">
+                    <label for="name">Topic</label>
+                    <input type="text"  [(ngModel)]="grammar.name" [ngModelOptions]="{standalone: true}"  class="form-control" />
+                  </div>
+                  <div class="form-group">
+                    <label for="detail">Form</label>
+                    <textarea id="detail" class="form-control"  [(ngModel)]="grammar.form" (change)="grammar.form = text.value" #text [ngModelOptions]="{standalone: true}"  rows="3" ></textarea>
+                  </div>
+                  <div class="form-group">
+                    <label for="detail">Example</label>
+                    <textarea id="detail" class="form-control" [(ngModel)]="grammar.example" (change)="grammar.example = text2.value" #text2 [ngModelOptions]="{standalone: true}" rows="3" ></textarea>
+                  </div>
+                  <div class="form-group">
+                    <label for="name">Usage</label>
+                    <textarea type="text" id="name"  [(ngModel)]="grammar.usage" (change)="grammar.usage = text3.value" #text3 [ngModelOptions]="{standalone: true}"  class="form-control"></textarea>
+                  </div>
+                  <button type="button"  (click)="editGrammar()" class="btn btn-success btn-md">Edit</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End Form Elements -->
+      </div>  
+    </div>
+    <!-- /. ROW  -->
+  </div>
+  <!-- /. PAGE INNER  -->
+</div>

@@ -1,0 +1,67 @@
+<div id="page-wrapper" style="width: 70%;float:right;margin-bottom: 70px">
+  <div id="page-inner">
+    <div class="row">
+      <div class="col-md-12">
+        <h2 style="margin-top: 10%;color: red">Add Question</h2>
+      </div>
+    </div>
+    <!-- /. ROW  -->
+    <hr />
+    <div class="row">
+      <div class="col-md-12">
+        <!-- Form Elements -->
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <div class="row">
+              <div class="col-md-12">
+                <form role="form" id="form">
+                  <div class="form-group">
+                    <label for="detail">Content</label>
+                    <textarea id="detail" class="form-control"  rows="5" [(ngModel)]="content" [ngModelOptions]="{standalone: true}" ></textarea>
+                  </div>
+                  <div class="form-group">
+                    <label for="name">Answer A</label>
+                    <input type="text" [(ngModel)]="answers1" [ngModelOptions]="{standalone: true}"  class="form-control" />
+                  </div>
+                  <div class="form-group">
+                    <label for="name">Answer B</label>
+                    <input type="text" [(ngModel)]="answers2" [ngModelOptions]="{standalone: true}" class="form-control" />
+                  </div>
+                  <div class="form-group">
+                    <label for="name">Answer C</label>
+                    <input type="text"  [(ngModel)]="answers3" [ngModelOptions]="{standalone: true}" class="form-control" />
+                  </div>
+                  <div class="form-group">
+                    <label for="name">Answer D</label>
+                    <input type="text" [(ngModel)]="answers4" [ngModelOptions]="{standalone: true}" class="form-control" />
+                  </div>
+                  <div class="form-group">
+                    <label for="name">Answer Correct</label>
+                    <input type="text" [(ngModel)]="answer" [ngModelOptions]="{standalone: true}" class="form-control" />
+                  </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlSelect1">Topic</label>
+                        <select class="form-control form-control-lg" id="topic" (change)="selectOption($event.target.value)" >
+                          <option name="topic" *ngFor="let item of categories; let i = index" value="{{item._id}}">{{item.name}}</option>
+                        </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlSelect1">Topic</label>
+                            <select class="form-control form-control-lg" id="exampleFormControlSelect1" (change)="selectOption1($event.target.value)">
+                              <option *ngFor="let item of listChildCategories1" value="{{item._id}}">{{item.name}}</option>
+                              <option *ngFor="let item of listChildCategories2" value="{{item._id}}">{{item.name}}</option>
+                            </select>
+                            </div>
+                  <button type="button" (click)="addQuest()"  class="btn btn-success btn-md">Add</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End Form Elements -->
+      </div>
+    </div>
+    <!-- /. ROW  -->
+  </div>
+  <!-- /. PAGE INNER  -->
+</div>
