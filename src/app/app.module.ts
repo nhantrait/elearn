@@ -40,6 +40,7 @@ import { AddCatChildComponent } from './admin/cat/add-cat-child/add-cat-child.co
 import { ShowChildComponent } from './admin/cat/show-child/show-child.component';
 import { AddChildComponent } from './admin/cat/add-child/add-child.component';
 import { EditChildComponent } from './admin/cat/edit-child/edit-child.component';
+import { SearchVocabComponent } from './admin/vocab/search-vocab/search-vocab.component';
 
 const routes: Routes = [
   { path: "", component: AdminComponent },
@@ -67,8 +68,9 @@ const routes: Routes = [
   { path: "category/:id/:id1" , component : ShowChildComponent},
   { path: "category/:id/:id1/edit/:id2" , component : EditChildComponent},
   { path: "category/:id/:id1/add" , component : AddChildComponent},
-  { path: ":name" , component : CategoryComponent},  
+  { path: ":name" , component : CategoryComponent},
   { path: ":name/:name/vocab/:id/add", component: AddVocabComponent },
+  { path: ":name/:name/vocab/:id/search", component: SearchVocabComponent },
   { path: ":name/:name/vocab/:id/edit/:idword", component: EditVocabComponent },
   { path: ":name/:name/vocab/:id", component: ShowVocabComponent },
   { path: ":name/:name/grammar/:id", component: ShowGrammerComponent },
@@ -114,7 +116,8 @@ const routes: Routes = [
     AddCatChildComponent,
     ShowChildComponent,
     AddChildComponent,
-    EditChildComponent
+    EditChildComponent,
+    SearchVocabComponent
   ],
   imports: [
     CommonModule,

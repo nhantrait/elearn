@@ -10,8 +10,10 @@ import { CategoryService } from 'src/app/_services/category.service';
 })
 export class ShowVocabComponent implements OnInit {
   public vocabs : Vocabs
-  id : string
-  url : string
+    id : string
+    url : string
+    searche : string
+    vocab : Vocabs
   constructor(
     private router : ActivatedRoute,
     private cat : CategoryService
@@ -40,4 +42,5 @@ export class ShowVocabComponent implements OnInit {
       console.log(error);
     })
   }
+ 
 }

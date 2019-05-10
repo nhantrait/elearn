@@ -9,20 +9,15 @@
           <div class="panel-body">
             <div class="table-responsive">
               <div class="row">
-                <div class="col-sm-6">
-                  <a [routerLink]="[ url +'/add' ]" class="btn btn-success btn-md">Add New Vocabulary</a>
-                </div>
+                
                 <div class="col-sm-6" style="text-align: right;">
                   <form method="post" action="">
-                    <input type="submit" name="search" [routerLink]="[url+'/search']" [queryParams]="{q:searche}"  class="btn btn-warning btn-sm"
-                      style="float:right" />
-                    <input type="search" class="form-control input-sm" [(ngModel)]="searche" [ngModelOptions]="{standalone: true}" placeholder="search"
-                      style="float:right; width: 300px;" />
+                   
                     <div style="clear:both"></div>
                   </form><br />
                 </div>
               </div>
-
+                <h1 style="margin-left: 350px;color: blue">Result of "{{searche}}"</h1>
               <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                 <thead>
                   <tr>
@@ -30,7 +25,6 @@
                     <th style="width: 14%">Words</th>
                     <th style="width: 12%">Mean</th>
                     <th style="width: 10%">Spell</th>
-                    <th style="width: 15%">Function</th>
                   </tr>
                 </thead>
                 <tbody *ngFor="let item of vocabs;let i = index">
@@ -39,12 +33,7 @@
                     <td class="center">{{item.name}}</td>
                     <td class="center">{{item.mean}}</td>
                     <td class="center">{{item.spell}}</td>
-                    <td class="center">
-                      <a href="" title="" [routerLink]="[ url+'/edit/'+item._id ]" class="btn btn-primary"><i class="fa fa-edit "></i> Edit</a>
-                      <a title="" (click)="deleteWord(item._id)" class="btn btn-danger"><i class="fa fa-pencil"></i> Delete</a>
-                    </td>
                   </tr>
-
                 </tbody>
               </table>
 

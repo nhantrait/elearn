@@ -20,7 +20,7 @@ export class CategoryService {
     return this.http.get<any>(environment.API+"/category/"+id_category+"/children")
   }
   getIdCat(id_level){
-    return this.http.get(environment.API+"/category/"+id_level+"/words")
+    return this.http.get(environment.API+"/category/"+id_level+"/words?limit=100")
   }
   getWord(id){
     return this.http.get(environment.API+"/word?id="+id)
@@ -29,10 +29,10 @@ export class CategoryService {
     return this.http.get(environment.API+"/grammar?id="+id)
   }
   getIdCatGram(id_level){
-    return this.http.get(environment.API+"/category/"+id_level+"/grammars")
+    return this.http.get(environment.API+"/category/"+id_level+"/grammars?limit=100")
   }
   getQuest(){
-    return this.http.get(environment.API+"/question")
+    return this.http.get(environment.API+"/question?limit=100")
   }
   addVocab(category,name,mean,spell,usage,example,linkMp3){
     if(headerOptions.headers.get('token')==null){
@@ -105,5 +105,11 @@ editCatChild(parent,id,name){
     headerOptions.headers = headerOptions.headers.append("token",localStorage.getItem('token'));
   }
   return this.http.put(environment.API+"/category",{parent,id,name},headerOptions)
+}
+getResultSearch(text){
+  if(headerOptions.headers.get('token')==null){
+    headerOptions.headers = headerOptions.headers.append("token",localStorage.getItem('token'));
+ }
+  return this.http.get<any>(environment.API+"/search?q="+text,headerOptions);
 }
 }
